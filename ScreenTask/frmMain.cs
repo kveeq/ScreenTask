@@ -24,6 +24,7 @@ namespace ScreenTask
         private bool isPrivateTask;
         private bool isPreview;
         private bool isMouseCapture;
+        private bool isStopTranslationToolStripMenuItem;
 
         private object locker = new object();
         private ReaderWriterLock rwl = new ReaderWriterLock();
@@ -57,8 +58,6 @@ namespace ScreenTask
 
             try
             {
-
-
                 serv.IgnoreWriteExceptions = true;
                 isTakingScreenshots = true;
                 isWorking = true;
@@ -89,7 +88,8 @@ namespace ScreenTask
             txtURL.Text = url;
             serv.Prefixes.Clear();
             serv.Prefixes.Add("http://localhost:" + numPort.Value.ToString() + "/");
-            //serv.Prefixes.Add("http://*:" + numPort.Value.ToString() + "/"); // Uncomment this to Allow Public IP Over Internet. [Commented for Security Reasons.]
+            serv.Prefixes.Add("http://*:" + numPort.Value.ToString() + "/"); 
+            // Uncomment this to Allow Public IP Over Internet. [Commented for Security Reasons.]
             serv.Prefixes.Add(url + "/");
             serv.Start();
             Log("Server Started Successfuly!");
@@ -191,7 +191,6 @@ namespace ScreenTask
                     /*
                         Do Nothing !!! this is the Only Effective Solution for this Exception : 
                         the specified network name is no longer available
-                        
                      */
 
                 }
@@ -211,12 +210,11 @@ namespace ScreenTask
                     await Task.Delay(msec);
                 }
 
-
             }
         }
         private void TakeScreenshot(bool captureMouse)
         {
-            if (captureMouse)
+            if (captureMouse && isChekbox.Checked == false)
             {
                 var bmp = ScreenCapturePInvoke.CaptureFullScreen(true);
                 rwl.AcquireWriterLock(Timeout.Infinite);
@@ -247,10 +245,8 @@ namespace ScreenTask
                     bitmap.Save(img, ImageFormat.Jpeg);
                     imgPreview.Image = new Bitmap(img);
                 }
-
-
             }
-        }
+        }  
         private string GetIPv4Address()
         {
             string IP4Address = String.Empty;
@@ -337,6 +333,7 @@ namespace ScreenTask
             btnStartServer.Enabled = true;
             btnStopServer.Enabled = false;
             Log("Server Stoped.");
+
         }
 
         private void cbPrivate_CheckedChanged(object sender, EventArgs e)
@@ -407,7 +404,7 @@ namespace ScreenTask
                 imgPreview.Dock = DockStyle.None;
             }
         }
-
+        
         private void cbScreenshotEvery_CheckedChanged(object sender, EventArgs e)
         {
             if (cbScreenshotEvery.Checked)
@@ -436,6 +433,51 @@ namespace ScreenTask
             Process.Start("https://github.com/EslaMx7/ScreenTask");
         }
 
+        private void isChekbox_CheckedChanged( object sender, EventArgs e)
+        {
+            if (isChekbox.Checked == true)
+            {
+                Bitmap bitmap = new Bitmap(Properties.Resources.unnamed);
+                bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                isTakingScreenshots = false;
+                isPreview = false;
+                imgPreview.Image = new Bitmap (Properties.Resources.unnamed);
+                MessageBox.Show("Translation is stopped");
+            }
+            else
+            {
+                isTakingScreenshots = true;
+                isPreview = true;
+            }
+        }
 
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Tree.Visible = false;
+            this.Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void frmMain_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Tree.Visible = true;
+                this.Hide();
+            }
+        }
+
+        
+        private void stopTranslationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (stopTranslationToolStripMenuItem.Checked)
+            {
+                isChekbox.Checked = true;
+            } 
+            else
+            {
+                isChekbox.Checked = false;
+            }
+        }
     }
 }

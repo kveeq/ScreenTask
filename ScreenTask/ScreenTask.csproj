@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imgPrev.png" />
+    <None Include="Resources\vZnheP.jpg" />
     <Content Include="screenicon.ico" />
     <Content Include="ScreenTaskBackground.png" />
     <Content Include="ScreenTaskMain.png" />
