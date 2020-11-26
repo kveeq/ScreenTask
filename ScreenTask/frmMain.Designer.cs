@@ -553,11 +553,11 @@
         private System.Windows.Forms.Label lblWebsite;
         private System.Windows.Forms.Label lblGithub;
         private System.Windows.Forms.CheckBox isChekbox;
-        private System.Windows.Forms.NotifyIcon Tree;
         private System.Windows.Forms.ContextMenuStrip PutUpMenu;
         private System.Windows.Forms.ToolStripMenuItem startServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopTranslationToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon Tree;
     }
 }
 

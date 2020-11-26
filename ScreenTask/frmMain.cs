@@ -88,8 +88,7 @@ namespace ScreenTask
             txtURL.Text = url;
             serv.Prefixes.Clear();
             serv.Prefixes.Add("http://localhost:" + numPort.Value.ToString() + "/");
-            serv.Prefixes.Add("http://*:" + numPort.Value.ToString() + "/"); 
-            // Uncomment this to Allow Public IP Over Internet. [Commented for Security Reasons.]
+            //serv.Prefixes.Add("http://*:" + numPort.Value.ToString() + "/"); // Uncomment this to Allow Public IP Over Internet. [Commented for Security Reasons.]
             serv.Prefixes.Add(url + "/");
             serv.Start();
             Log("Server Started Successfuly!");
@@ -437,8 +436,19 @@ namespace ScreenTask
         {
             if (isChekbox.Checked == true)
             {
-                Bitmap bitmap = new Bitmap(Properties.Resources.unnamed);
-                bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                //<-- of external source -->
+            /* 
+             * PictureBox pictureBox = new PictureBox();
+             * pictureBox.Load("http://lordfilms-s.pw/uploads/posts/2018-12/1545733866-637579249.jpg");
+             * pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+            */
+                //<-- of local source -->
+            /* 
+             * Bitmap bitmap = new Bitmap(Properties.Resources.unnamed);
+             * bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+            */
+                //<-- Dinamic image of Text -->
+
                 isTakingScreenshots = false;
                 isPreview = false;
                 imgPreview.Image = new Bitmap (Properties.Resources.unnamed);
