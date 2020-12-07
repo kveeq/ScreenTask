@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -24,7 +22,6 @@ namespace ScreenTask
         private bool isPrivateTask;
         private bool isPreview;
         private bool isMouseCapture;
-        private bool isStopTranslationToolStripMenuItem;
 
         private object locker = new object();
         private ReaderWriterLock rwl = new ReaderWriterLock();
@@ -33,6 +30,7 @@ namespace ScreenTask
         HttpListener serv;
         public frmMain()
         {
+
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false; // For Visual Studio Debuging Only !
             serv = new HttpListener();
@@ -245,7 +243,7 @@ namespace ScreenTask
                     imgPreview.Image = new Bitmap(img);
                 }
             }
-        }  
+        }
         private string GetIPv4Address()
         {
             string IP4Address = String.Empty;
@@ -403,7 +401,7 @@ namespace ScreenTask
                 imgPreview.Dock = DockStyle.None;
             }
         }
-        
+
         private void cbScreenshotEvery_CheckedChanged(object sender, EventArgs e)
         {
             if (cbScreenshotEvery.Checked)
@@ -432,27 +430,63 @@ namespace ScreenTask
             Process.Start("https://github.com/EslaMx7/ScreenTask");
         }
 
-        private void isChekbox_CheckedChanged( object sender, EventArgs e)
-        {
-            if (isChekbox.Checked == true)
-            {
-                //<-- of external source -->
-            /* 
-             * PictureBox pictureBox = new PictureBox();
-             * pictureBox.Load("http://lordfilms-s.pw/uploads/posts/2018-12/1545733866-637579249.jpg");
-             * pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
-            */
-                //<-- of local source -->
-            /* 
-             * Bitmap bitmap = new Bitmap(Properties.Resources.unnamed);
-             * bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
-            */
-                //<-- Dinamic image of Text -->
 
+        private void isChekbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isChekbox.Checked)
+            {
                 isTakingScreenshots = false;
                 isPreview = false;
-                imgPreview.Image = new Bitmap (Properties.Resources.unnamed);
-                MessageBox.Show("Translation is stopped");
+
+                //<-- of external source -->
+                if (comboBox1.Text == "Of external source image")
+                {
+                    textBox1.Visible = true;
+                    button1.Visible = true;
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Load(textBox1.Text);
+                    imgPreview.Image = pictureBox.Image;
+                    pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
+
+                //< --of local source -->
+                else if (comboBox1.Text == "Local image")
+                {
+                    textBox1.Visible = true;
+                    button1.Visible = true;
+                    Bitmap bitmap = new Bitmap(textBox1.Text);
+                    imgPreview.Image = bitmap;
+                    bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
+
+                //<-- Dinamic image of Text -->
+                else if (comboBox1.Text == "Dynamic image")
+                {
+
+                    textBox1.Visible = false;
+                    button1.Visible = false;
+                    Rectangle bounds = Screen.GetBounds(Point.Empty);
+                    using (Bitmap bmp = new Bitmap(bounds.Width, bounds.Height))
+                    {
+                        Random rnd = new Random();
+                        int a = 0, r = 0, g = 0, b = 0;
+
+                        for (int y = 0; y < bounds.Height; y++)
+                        {
+                            for (int x = 0; x < bounds.Width; x++)
+                            {
+                                a = rnd.Next(64);
+                                r = rnd.Next(64);
+                                g = rnd.Next(a);
+                                b = rnd.Next(r);
+
+                                bmp.SetPixel(x, y, Color.FromArgb(a, r, g, b));
+                            }
+                        }
+
+                        CreateGridImage(a, r, g, b, 30);
+                    }
+                }
             }
             else
             {
@@ -477,16 +511,88 @@ namespace ScreenTask
             }
         }
 
-        
+
         private void stopTranslationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (stopTranslationToolStripMenuItem.Checked)
             {
                 isChekbox.Checked = true;
-            } 
+            }
             else
             {
                 isChekbox.Checked = false;
+            }
+        }
+
+        public static Bitmap CreateGridImage(
+            int maxXCells,
+            int maxYCells,
+            int cellXPosition,
+            int cellYPosition,
+            int boxSize)
+        {
+            using (var bmp = new System.Drawing.Bitmap(maxXCells * boxSize + 1, maxYCells * boxSize + 1))
+            {
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.Clear(Color.Yellow);
+                    Pen pen = new Pen(Color.Black);
+                    pen.Width = 1;
+
+                    //Draw red rectangle to go behind cross
+                    Rectangle rect = new Rectangle(boxSize * (cellXPosition - 1), boxSize * (cellYPosition - 1), boxSize, boxSize);
+                    g.FillRectangle(new SolidBrush(Color.Red), rect);
+
+                    //Draw cross
+                    g.DrawLine(pen, boxSize * (cellXPosition - 1), boxSize * (cellYPosition - 1), boxSize * cellXPosition, boxSize * cellYPosition);
+                    g.DrawLine(pen, boxSize * (cellXPosition - 1), boxSize * cellYPosition, boxSize * cellXPosition, boxSize * (cellYPosition - 1));
+
+                    //Draw horizontal lines
+                    for (int i = 0; i <= maxXCells; i++)
+                    {
+                        g.DrawLine(pen, (i * boxSize), 0, i * boxSize, boxSize * maxYCells);
+                    }
+
+                    //Draw vertical lines            
+                    for (int i = 0; i <= maxYCells; i++)
+                    {
+                        g.DrawLine(pen, 0, (i * boxSize), boxSize * maxXCells, i * boxSize);
+                    }
+                }
+
+                var memStream = new MemoryStream();
+                bmp.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                return bmp;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var OFD = new System.Windows.Forms.OpenFileDialog();
+            OFD.ShowDialog();
+            textBox1.Text = OFD.FileName;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //<-- of external source -->
+            if (comboBox1.Text == "Of external source image")
+            {
+                textBox1.Visible = true;
+                button1.Visible = false;
+            }
+
+            //< --of local source -->
+            else if (comboBox1.Text == "Local image")
+            {
+                textBox1.Visible = true;
+                button1.Visible = true;
+            }
+
+            else
+            {
+                textBox1.Visible = false;
+                button1.Visible = false;
             }
         }
     }

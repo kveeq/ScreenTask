@@ -63,6 +63,10 @@
             this.startServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopTranslationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numShotEvery)).BeginInit();
@@ -71,199 +75,119 @@
             // 
             // gbOptions
             // 
-            this.gbOptions.Location = new System.Drawing.Point(964, 17);
-            this.gbOptions.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.gbOptions, "gbOptions");
             this.gbOptions.Name = "gbOptions";
-            this.gbOptions.Padding = new System.Windows.Forms.Padding(4);
-            this.gbOptions.Size = new System.Drawing.Size(152, 138);
-            this.gbOptions.TabIndex = 0;
             this.gbOptions.TabStop = false;
-            this.gbOptions.Text = "Server Options";
             // 
             // gbLog
             // 
-            this.gbLog.Location = new System.Drawing.Point(964, 415);
-            this.gbLog.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.gbLog, "gbLog");
             this.gbLog.Name = "gbLog";
-            this.gbLog.Padding = new System.Windows.Forms.Padding(4);
-            this.gbLog.Size = new System.Drawing.Size(545, 148);
-            this.gbLog.TabIndex = 1;
             this.gbLog.TabStop = false;
-            this.gbLog.Text = "Log";
             // 
             // gbPreview
             // 
-            this.gbPreview.Location = new System.Drawing.Point(964, 175);
-            this.gbPreview.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.gbPreview, "gbPreview");
             this.gbPreview.Name = "gbPreview";
-            this.gbPreview.Padding = new System.Windows.Forms.Padding(4);
-            this.gbPreview.Size = new System.Drawing.Size(545, 233);
-            this.gbPreview.TabIndex = 2;
             this.gbPreview.TabStop = false;
-            this.gbPreview.Text = "Preview";
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(8, 290);
-            this.txtLog.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLog.Multiline = true;
+            resources.ApplyResources(this.txtLog, "txtLog");
             this.txtLog.Name = "txtLog";
             this.txtLog.ReadOnly = true;
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(504, 170);
-            this.txtLog.TabIndex = 3;
             this.txtLog.TextChanged += new System.EventHandler(this.txtLog_TextChanged);
             // 
             // imgPreview
             // 
             this.imgPreview.Image = global::ScreenTask.Properties.Resources.imgPrev;
             this.imgPreview.InitialImage = global::ScreenTask.Properties.Resources.imgPrev;
-            this.imgPreview.Location = new System.Drawing.Point(520, 290);
-            this.imgPreview.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.imgPreview, "imgPreview");
             this.imgPreview.Name = "imgPreview";
-            this.imgPreview.Size = new System.Drawing.Size(280, 172);
-            this.imgPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgPreview.TabIndex = 4;
             this.imgPreview.TabStop = false;
             this.imgPreview.Click += new System.EventHandler(this.imgPreview_Click);
             // 
             // pnlOptions
             // 
             this.pnlOptions.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlOptions.Location = new System.Drawing.Point(1171, 34);
-            this.pnlOptions.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.pnlOptions, "pnlOptions");
             this.pnlOptions.Name = "pnlOptions";
-            this.pnlOptions.Size = new System.Drawing.Size(123, 69);
-            this.pnlOptions.TabIndex = 5;
             // 
             // comboIPs
             // 
             this.comboIPs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIPs.FormattingEnabled = true;
-            this.comboIPs.Location = new System.Drawing.Point(63, 107);
-            this.comboIPs.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.comboIPs, "comboIPs");
             this.comboIPs.Name = "comboIPs";
-            this.comboIPs.Size = new System.Drawing.Size(285, 24);
-            this.comboIPs.TabIndex = 27;
             // 
             // cbCaptureMouse
             // 
-            this.cbCaptureMouse.AutoSize = true;
+            resources.ApplyResources(this.cbCaptureMouse, "cbCaptureMouse");
             this.cbCaptureMouse.BackColor = System.Drawing.Color.Transparent;
-            this.cbCaptureMouse.Location = new System.Drawing.Point(533, 191);
-            this.cbCaptureMouse.Margin = new System.Windows.Forms.Padding(4);
             this.cbCaptureMouse.Name = "cbCaptureMouse";
-            this.cbCaptureMouse.Size = new System.Drawing.Size(175, 21);
-            this.cbCaptureMouse.TabIndex = 26;
-            this.cbCaptureMouse.Text = "Capture Mouse Pointer";
             this.cbCaptureMouse.UseVisualStyleBackColor = false;
             this.cbCaptureMouse.CheckedChanged += new System.EventHandler(this.cbCaptureMouse_CheckedChanged);
             // 
             // cbPreview
             // 
-            this.cbPreview.AutoSize = true;
+            resources.ApplyResources(this.cbPreview, "cbPreview");
             this.cbPreview.BackColor = System.Drawing.Color.Transparent;
-            this.cbPreview.Location = new System.Drawing.Point(533, 266);
-            this.cbPreview.Margin = new System.Windows.Forms.Padding(4);
             this.cbPreview.Name = "cbPreview";
-            this.cbPreview.Size = new System.Drawing.Size(79, 21);
-            this.cbPreview.TabIndex = 25;
-            this.cbPreview.Text = "Preview";
             this.cbPreview.UseVisualStyleBackColor = false;
             this.cbPreview.CheckedChanged += new System.EventHandler(this.cbPreview_CheckedChanged);
             // 
             // btnStopServer
             // 
             this.btnStopServer.BackColor = System.Drawing.Color.Maroon;
-            this.btnStopServer.Enabled = false;
-            this.btnStopServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.btnStopServer, "btnStopServer");
             this.btnStopServer.ForeColor = System.Drawing.Color.White;
-            this.btnStopServer.Location = new System.Drawing.Point(203, 241);
-            this.btnStopServer.Margin = new System.Windows.Forms.Padding(4);
             this.btnStopServer.Name = "btnStopServer";
-            this.btnStopServer.Size = new System.Drawing.Size(173, 28);
-            this.btnStopServer.TabIndex = 24;
-            this.btnStopServer.Text = "Stop Server";
             this.btnStopServer.UseVisualStyleBackColor = false;
-            this.btnStopServer.Visible = false;
             this.btnStopServer.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
             // btnStartServer
             // 
             this.btnStartServer.BackColor = System.Drawing.Color.Gray;
-            this.btnStartServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartServer.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            resources.ApplyResources(this.btnStartServer, "btnStartServer");
             this.btnStartServer.ForeColor = System.Drawing.Color.White;
-            this.btnStartServer.Location = new System.Drawing.Point(152, 236);
-            this.btnStartServer.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartServer.Name = "btnStartServer";
-            this.btnStartServer.Size = new System.Drawing.Size(269, 37);
-            this.btnStartServer.TabIndex = 23;
             this.btnStartServer.Tag = "start";
-            this.btnStartServer.Text = "Start Server";
             this.btnStartServer.UseVisualStyleBackColor = false;
             this.btnStartServer.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Enabled = false;
-            this.txtPassword.Location = new System.Drawing.Point(425, 192);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txtPassword, "txtPassword");
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(87, 22);
-            this.txtPassword.TabIndex = 22;
-            this.txtPassword.Text = "task";
             // 
             // txtUser
             // 
-            this.txtUser.Enabled = false;
-            this.txtUser.Location = new System.Drawing.Point(244, 192);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txtUser, "txtUser");
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(87, 22);
-            this.txtUser.TabIndex = 21;
-            this.txtUser.Text = "screen";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(340, 196);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Password : ";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(196, 196);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 17);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "User : ";
             // 
             // cbPrivate
             // 
-            this.cbPrivate.AutoSize = true;
+            resources.ApplyResources(this.cbPrivate, "cbPrivate");
             this.cbPrivate.BackColor = System.Drawing.Color.Transparent;
-            this.cbPrivate.Location = new System.Drawing.Point(63, 194);
-            this.cbPrivate.Margin = new System.Windows.Forms.Padding(4);
             this.cbPrivate.Name = "cbPrivate";
-            this.cbPrivate.Size = new System.Drawing.Size(113, 21);
-            this.cbPrivate.TabIndex = 18;
-            this.cbPrivate.Text = "Private Task ";
             this.cbPrivate.UseVisualStyleBackColor = false;
             this.cbPrivate.CheckedChanged += new System.EventHandler(this.cbPrivate_CheckedChanged);
             // 
             // numPort
             // 
-            this.numPort.Location = new System.Drawing.Point(409, 108);
-            this.numPort.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.numPort, "numPort");
             this.numPort.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -275,8 +199,6 @@
             0,
             0});
             this.numPort.Name = "numPort";
-            this.numPort.Size = new System.Drawing.Size(104, 22);
-            this.numPort.TabIndex = 1;
             this.numPort.Value = new decimal(new int[] {
             7070,
             0,
@@ -285,72 +207,43 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(357, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Port :";
             // 
             // txtURL
             // 
-            this.txtURL.Location = new System.Drawing.Point(63, 144);
-            this.txtURL.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.txtURL, "txtURL");
             this.txtURL.Name = "txtURL";
             this.txtURL.ReadOnly = true;
-            this.txtURL.Size = new System.Drawing.Size(449, 22);
-            this.txtURL.TabIndex = 17;
-            this.txtURL.Text = "the URL will displayed here after starting the server...";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(11, 145);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "URL :";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(15, 108);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 17);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "IP :";
             // 
             // cbScreenshotEvery
             // 
-            this.cbScreenshotEvery.AutoSize = true;
+            resources.ApplyResources(this.cbScreenshotEvery, "cbScreenshotEvery");
             this.cbScreenshotEvery.BackColor = System.Drawing.Color.Transparent;
             this.cbScreenshotEvery.Checked = true;
             this.cbScreenshotEvery.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbScreenshotEvery.Location = new System.Drawing.Point(533, 106);
-            this.cbScreenshotEvery.Margin = new System.Windows.Forms.Padding(4);
             this.cbScreenshotEvery.Name = "cbScreenshotEvery";
-            this.cbScreenshotEvery.Size = new System.Drawing.Size(186, 21);
-            this.cbScreenshotEvery.TabIndex = 29;
-            this.cbScreenshotEvery.Text = "Take Screenshot Every :";
             this.cbScreenshotEvery.UseVisualStyleBackColor = false;
             this.cbScreenshotEvery.CheckedChanged += new System.EventHandler(this.cbScreenshotEvery_CheckedChanged);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(668, 145);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 17);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Mellisecond";
             // 
             // numShotEvery
             // 
@@ -359,8 +252,7 @@
             0,
             0,
             0});
-            this.numShotEvery.Location = new System.Drawing.Point(561, 143);
-            this.numShotEvery.Margin = new System.Windows.Forms.Padding(4);
+            resources.ApplyResources(this.numShotEvery, "numShotEvery");
             this.numShotEvery.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -372,9 +264,6 @@
             0,
             0});
             this.numShotEvery.Name = "numShotEvery";
-            this.numShotEvery.Size = new System.Drawing.Size(99, 22);
-            this.numShotEvery.TabIndex = 30;
-            this.numShotEvery.ThousandsSeparator = true;
             this.numShotEvery.Value = new decimal(new int[] {
             500,
             0,
@@ -383,49 +272,31 @@
             // 
             // lblMe
             // 
-            this.lblMe.AutoSize = true;
+            resources.ApplyResources(this.lblMe, "lblMe");
             this.lblMe.BackColor = System.Drawing.Color.Transparent;
             this.lblMe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblMe.Location = new System.Drawing.Point(624, 481);
-            this.lblMe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMe.Name = "lblMe";
-            this.lblMe.Size = new System.Drawing.Size(183, 17);
-            this.lblMe.TabIndex = 32;
-            this.lblMe.Text = "Coded by : Eslam Hamouda";
             this.lblMe.Click += new System.EventHandler(this.lblMe_Click);
             // 
             // lblWebsite
             // 
             this.lblWebsite.BackColor = System.Drawing.Color.Transparent;
             this.lblWebsite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblWebsite.Location = new System.Drawing.Point(44, 473);
-            this.lblWebsite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblWebsite, "lblWebsite");
             this.lblWebsite.Name = "lblWebsite";
-            this.lblWebsite.Size = new System.Drawing.Size(240, 30);
-            this.lblWebsite.TabIndex = 33;
-            this.lblWebsite.Text = "2014 | eslamx.com";
-            this.lblWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblWebsite.Click += new System.EventHandler(this.lblWebsite_Click);
             // 
             // lblGithub
             // 
             this.lblGithub.BackColor = System.Drawing.Color.Transparent;
-            this.lblGithub.Location = new System.Drawing.Point(717, 11);
-            this.lblGithub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            resources.ApplyResources(this.lblGithub, "lblGithub");
             this.lblGithub.Name = "lblGithub";
-            this.lblGithub.Size = new System.Drawing.Size(105, 69);
-            this.lblGithub.TabIndex = 34;
             this.lblGithub.Click += new System.EventHandler(this.lblGithub_Click);
             // 
             // isChekbox
             // 
-            this.isChekbox.AutoSize = true;
-            this.isChekbox.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.isChekbox.Location = new System.Drawing.Point(652, 266);
+            resources.ApplyResources(this.isChekbox, "isChekbox");
             this.isChekbox.Name = "isChekbox";
-            this.isChekbox.Size = new System.Drawing.Size(129, 21);
-            this.isChekbox.TabIndex = 35;
-            this.isChekbox.Text = "Stop translation";
             this.isChekbox.UseVisualStyleBackColor = true;
             this.isChekbox.CheckedChanged += new System.EventHandler(this.isChekbox_CheckedChanged);
             // 
@@ -433,8 +304,7 @@
             // 
             this.Tree.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.Tree.ContextMenuStrip = this.PutUpMenu;
-            this.Tree.Icon = ((System.Drawing.Icon)(resources.GetObject("Tree.Icon")));
-            this.Tree.Text = "ScreenTask";
+            resources.ApplyResources(this.Tree, "Tree");
             this.Tree.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // PutUpMenu
@@ -445,20 +315,18 @@
             this.stopServerToolStripMenuItem,
             this.stopTranslationToolStripMenuItem});
             this.PutUpMenu.Name = "PutUpMenu";
-            this.PutUpMenu.Size = new System.Drawing.Size(186, 76);
+            resources.ApplyResources(this.PutUpMenu, "PutUpMenu");
             // 
             // startServerToolStripMenuItem
             // 
             this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
-            this.startServerToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.startServerToolStripMenuItem.Text = "Start Server";
+            resources.ApplyResources(this.startServerToolStripMenuItem, "startServerToolStripMenuItem");
             this.startServerToolStripMenuItem.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
             // stopServerToolStripMenuItem
             // 
             this.stopServerToolStripMenuItem.Name = "stopServerToolStripMenuItem";
-            this.stopServerToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.stopServerToolStripMenuItem.Text = "Stop Server";
+            resources.ApplyResources(this.stopServerToolStripMenuItem, "stopServerToolStripMenuItem");
             this.stopServerToolStripMenuItem.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
             // stopTranslationToolStripMenuItem
@@ -466,17 +334,48 @@
             this.stopTranslationToolStripMenuItem.CheckOnClick = true;
             this.stopTranslationToolStripMenuItem.DoubleClickEnabled = true;
             this.stopTranslationToolStripMenuItem.Name = "stopTranslationToolStripMenuItem";
-            this.stopTranslationToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.stopTranslationToolStripMenuItem.Text = "Stop Translation";
+            resources.ApplyResources(this.stopTranslationToolStripMenuItem, "stopTranslationToolStripMenuItem");
             this.stopTranslationToolStripMenuItem.Click += new System.EventHandler(this.stopTranslationToolStripMenuItem_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.Tag = "choose way";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScreenTask.Properties.Resources.ScreenTaskBackground;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(823, 505);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.isChekbox);
             this.Controls.Add(this.imgPreview);
             this.Controls.Add(this.txtLog);
@@ -506,12 +405,8 @@
             this.Controls.Add(this.lblWebsite);
             this.Controls.Add(this.lblMe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Screen Task";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).EndInit();
@@ -558,6 +453,9 @@
         private System.Windows.Forms.ToolStripMenuItem stopServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopTranslationToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon Tree;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
-
