@@ -945,24 +945,6 @@
   <metadata name="PutUpMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>97, 20</value>
   </metadata>
-  <data name="startServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 24</value>
-  </data>
-  <data name="startServerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start Server</value>
-  </data>
-  <data name="stopServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 24</value>
-  </data>
-  <data name="stopServerToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stop Server</value>
-  </data>
-  <data name="stopTranslationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 24</value>
-  </data>
-  <data name="stopTranslationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stop Translation</value>
-  </data>
   <data name="PutUpMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 76</value>
   </data>
@@ -2107,6 +2089,24 @@
   <data name="Tree.Text" xml:space="preserve">
     <value>ScreenTask</value>
   </data>
+  <data name="startServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 24</value>
+  </data>
+  <data name="startServerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start Server</value>
+  </data>
+  <data name="stopServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 24</value>
+  </data>
+  <data name="stopServerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stop Server</value>
+  </data>
+  <data name="stopTranslationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 24</value>
+  </data>
+  <data name="stopTranslationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stop Translation</value>
+  </data>
   <data name="comboBox1.Items" xml:space="preserve">
     <value>Dynamic image</value>
   </data>
@@ -2191,32 +2191,35 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="OnceTranslation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 191</value>
+  <data name="OnceTranslation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 21</value>
+  <data name="OnceTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>715, 192</value>
   </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="OnceTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 21</value>
+  </data>
+  <data name="OnceTranslation.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
   </data>
-  <data name="checkBox1.Text" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="OnceTranslation.Text" xml:space="preserve">
+    <value>Once video</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
+  <data name="&gt;&gt;OnceTranslation.Name" xml:space="preserve">
+    <value>OnceTranslation</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;OnceTranslation.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OnceTranslation.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;OnceTranslation.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

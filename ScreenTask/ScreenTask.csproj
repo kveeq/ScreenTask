@@ -95,6 +95,9 @@
   <ItemGroup>
     <Content Include="imgPrev.png" />
     <None Include="Resources\vZnheP.jpg" />
+    <Content Include="OtherWebserver\bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="screenicon.ico" />
     <Content Include="ScreenTaskBackground.png" />
     <Content Include="ScreenTaskMain.png" />
@@ -102,7 +105,9 @@
     <Content Include="WebServer\bootstrap.min.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="WebServer\index2.html" />
+    <Content Include="OtherWebserver\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="WebServer\index.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

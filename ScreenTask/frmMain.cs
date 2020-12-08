@@ -98,8 +98,19 @@ namespace ScreenTask
                 //Screenshot();
                 var resPath = ctx.Request.Url.LocalPath;
                 if (resPath == "/") // Route The Root Dir to the Index Page
+                {
                     resPath += "index.html";
-                var page = Application.StartupPath + "/WebServer" + resPath;
+
+                }
+                var page = Application.StartupPath + "/WebServer" + resPath; ;
+                if (OnceTranslation.Checked)
+                {
+                    page = Application.StartupPath + "/OtherWebserver" + resPath;
+                }
+                else if (!OnceTranslation.Checked)
+                {
+                    page = Application.StartupPath + "/WebServer" + resPath;
+                }
                 bool fileExist;
                 lock (locker)
                     fileExist = File.Exists(page);
@@ -211,11 +222,11 @@ namespace ScreenTask
         }
         private void TakeScreenshot(bool captureMouse)
         {
-            if (captureMouse && isChekbox.Checked == false)
+            if (captureMouse)
             {
                 var bmp = ScreenCapturePInvoke.CaptureFullScreen(true);
                 rwl.AcquireWriterLock(Timeout.Infinite);
-                bmp.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                bmp.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
                 rwl.ReleaseWriterLock();
                 if (isPreview)
                 {
@@ -233,7 +244,8 @@ namespace ScreenTask
                     g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
                 }
                 rwl.AcquireWriterLock(Timeout.Infinite);
-                bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                bitmap.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+
                 rwl.ReleaseWriterLock();
 
                 if (isPreview)
@@ -594,6 +606,11 @@ namespace ScreenTask
                 textBox1.Visible = false;
                 button1.Visible = false;
             }
+        }
+
+        private void OnceTranslation_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
