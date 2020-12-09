@@ -102,7 +102,7 @@ namespace ScreenTask
                     resPath += "index.html";
 
                 }
-                var page = Application.StartupPath + "/WebServer" + resPath; ;
+                var page = Application.StartupPath + "/WebServer" + resPath;
                 if (OnceTranslation.Checked)
                 {
                     page = Application.StartupPath + "/OtherWebserver" + resPath;
@@ -226,7 +226,14 @@ namespace ScreenTask
             {
                 var bmp = ScreenCapturePInvoke.CaptureFullScreen(true);
                 rwl.AcquireWriterLock(Timeout.Infinite);
-                bmp.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                if (OnceTranslation.Checked)
+                {
+                    bmp.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
+                else if (!OnceTranslation.Checked)
+                {
+                    bmp.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
                 rwl.ReleaseWriterLock();
                 if (isPreview)
                 {
@@ -244,7 +251,14 @@ namespace ScreenTask
                     g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
                 }
                 rwl.AcquireWriterLock(Timeout.Infinite);
-                bitmap.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                if (OnceTranslation.Checked)
+                {
+                    bitmap.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
+                else if (!OnceTranslation.Checked)
+                {
+                    bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                }
 
                 rwl.ReleaseWriterLock();
 
