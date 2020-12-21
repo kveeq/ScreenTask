@@ -56,17 +56,17 @@
             this.numShotEvery = new System.Windows.Forms.NumericUpDown();
             this.lblMe = new System.Windows.Forms.Label();
             this.lblWebsite = new System.Windows.Forms.Label();
-            this.lblGithub = new System.Windows.Forms.Label();
-            this.isChekbox = new System.Windows.Forms.CheckBox();
+            this.isStoppingTranslation = new System.Windows.Forms.CheckBox();
             this.Tree = new System.Windows.Forms.NotifyIcon(this.components);
             this.PutUpMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.startServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopTranslationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ImageChoosing = new System.Windows.Forms.ComboBox();
+            this.ImageWay = new System.Windows.Forms.TextBox();
+            this.Rooting = new System.Windows.Forms.Button();
             this.OnceTranslation = new System.Windows.Forms.CheckBox();
+            this.LanguageChoosing = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numShotEvery)).BeginInit();
@@ -286,19 +286,12 @@
             this.lblWebsite.Name = "lblWebsite";
             this.lblWebsite.Click += new System.EventHandler(this.lblWebsite_Click);
             // 
-            // lblGithub
+            // isStoppingTranslation
             // 
-            this.lblGithub.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lblGithub, "lblGithub");
-            this.lblGithub.Name = "lblGithub";
-            this.lblGithub.Click += new System.EventHandler(this.lblGithub_Click);
-            // 
-            // isChekbox
-            // 
-            resources.ApplyResources(this.isChekbox, "isChekbox");
-            this.isChekbox.Name = "isChekbox";
-            this.isChekbox.UseVisualStyleBackColor = true;
-            this.isChekbox.CheckedChanged += new System.EventHandler(this.isChekbox_CheckedChanged);
+            resources.ApplyResources(this.isStoppingTranslation, "isStoppingTranslation");
+            this.isStoppingTranslation.Name = "isStoppingTranslation";
+            this.isStoppingTranslation.UseVisualStyleBackColor = true;
+            this.isStoppingTranslation.CheckedChanged += new System.EventHandler(this.isStoppingTranslation_CheckedChanged);
             // 
             // Tree
             // 
@@ -337,47 +330,53 @@
             resources.ApplyResources(this.stopTranslationToolStripMenuItem, "stopTranslationToolStripMenuItem");
             this.stopTranslationToolStripMenuItem.Click += new System.EventHandler(this.stopTranslationToolStripMenuItem_Click);
             // 
-            // comboBox1
+            // ImageChoosing
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2")});
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ImageChoosing.FormattingEnabled = true;
+            this.ImageChoosing.Items.AddRange(new object[] {
+            resources.GetString("ImageChoosing.Items"),
+            resources.GetString("ImageChoosing.Items1"),
+            resources.GetString("ImageChoosing.Items2")});
+            resources.ApplyResources(this.ImageChoosing, "ImageChoosing");
+            this.ImageChoosing.Name = "ImageChoosing";
+            this.ImageChoosing.SelectedIndexChanged += new System.EventHandler(this.ImageChoosing_SelectedIndexChanged);
             // 
-            // textBox1
+            // ImageWay
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.ImageWay, "ImageWay");
+            this.ImageWay.Name = "ImageWay";
             // 
-            // button1
+            // Rooting
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.Tag = "choose way";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.Rooting, "Rooting");
+            this.Rooting.Name = "Rooting";
+            this.Rooting.Tag = "choose way";
+            this.Rooting.UseVisualStyleBackColor = true;
+            this.Rooting.Click += new System.EventHandler(this.Rooting_Click);
             // 
             // OnceTranslation
             // 
             resources.ApplyResources(this.OnceTranslation, "OnceTranslation");
             this.OnceTranslation.Name = "OnceTranslation";
             this.OnceTranslation.UseVisualStyleBackColor = true;
-            this.OnceTranslation.CheckedChanged += new System.EventHandler(this.OnceTranslation_CheckedChanged);
+            // 
+            // LanguageChoosing
+            // 
+            this.LanguageChoosing.FormattingEnabled = true;
+            resources.ApplyResources(this.LanguageChoosing, "LanguageChoosing");
+            this.LanguageChoosing.Name = "LanguageChoosing";
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ScreenTask.Properties.Resources.ScreenTaskBackground;
+            this.Controls.Add(this.LanguageChoosing);
             this.Controls.Add(this.OnceTranslation);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.isChekbox);
+            this.Controls.Add(this.Rooting);
+            this.Controls.Add(this.ImageWay);
+            this.Controls.Add(this.ImageChoosing);
+            this.Controls.Add(this.isStoppingTranslation);
             this.Controls.Add(this.imgPreview);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.gbPreview);
@@ -402,12 +401,12 @@
             this.Controls.Add(this.cbCaptureMouse);
             this.Controls.Add(this.cbPreview);
             this.Controls.Add(this.btnStopServer);
-            this.Controls.Add(this.lblGithub);
             this.Controls.Add(this.lblWebsite);
             this.Controls.Add(this.lblMe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.imgPreview)).EndInit();
@@ -447,16 +446,16 @@
         private System.Windows.Forms.NumericUpDown numShotEvery;
         private System.Windows.Forms.Label lblMe;
         private System.Windows.Forms.Label lblWebsite;
-        private System.Windows.Forms.Label lblGithub;
-        private System.Windows.Forms.CheckBox isChekbox;
+        private System.Windows.Forms.CheckBox isStoppingTranslation;
         private System.Windows.Forms.ContextMenuStrip PutUpMenu;
         private System.Windows.Forms.ToolStripMenuItem startServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopTranslationToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon Tree;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox ImageChoosing;
+        private System.Windows.Forms.TextBox ImageWay;
+        private System.Windows.Forms.Button Rooting;
         private System.Windows.Forms.CheckBox OnceTranslation;
+        private System.Windows.Forms.ComboBox LanguageChoosing;
     }
 }

@@ -30,7 +30,11 @@ namespace ScreenTask
         HttpListener serv;
         public frmMain()
         {
-
+            if (!String.IsNullOrEmpty(Properties.Settings.Default.Language))
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
+                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo(Properties.Settings.Default.Language);
+            }
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false; // For Visual Studio Debuging Only !
             serv = new HttpListener();
@@ -47,7 +51,10 @@ namespace ScreenTask
             if (btnStartServer.Tag.ToString() != "start")
             {
                 btnStartServer.Tag = "start";
-                btnStartServer.Text = "Start Server";
+                if (LanguageChoosing.Text == "русский (Россия)")
+                    btnStartServer.Text = ServerStart_ru.SrartServerRU;
+                else
+                    btnStartServer.Text = ServerStart_en.StartServerEN;
                 isWorking = false;
                 isTakingScreenshots = false;
                 Log("Server Stoped.");
@@ -63,7 +70,10 @@ namespace ScreenTask
                 await AddFirewallRule((int)numPort.Value);
                 Task.Factory.StartNew(() => CaptureScreenEvery((int)numShotEvery.Value)).Wait();
                 btnStartServer.Tag = "stop";
-                btnStartServer.Text = "Stop Server";
+                if (LanguageChoosing.Text == "русский (Россия)")
+                    btnStartServer.Text = Server_ru.ServerRU;
+                else
+                    btnStartServer.Text = Server_en.ServerEN;
                 await StartServer();
 
             }
@@ -408,6 +418,18 @@ namespace ScreenTask
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            LanguageChoosing.DataSource = new System.Globalization.CultureInfo[]
+            {
+                System.Globalization.CultureInfo.GetCultureInfo("ru-RU"),
+                System.Globalization.CultureInfo.GetCultureInfo("en-US")
+            };
+            LanguageChoosing.DisplayMember = "NativeName";
+            LanguageChoosing.ValueMember = "Name";
+
+            if (!String.IsNullOrEmpty(Properties.Settings.Default.Language))
+            {
+                LanguageChoosing.SelectedValue = Properties.Settings.Default.Language;
+            }
             _ips = GetAllIPv4Addresses();
             foreach (var ip in _ips)
             {
@@ -457,40 +479,65 @@ namespace ScreenTask
         }
 
 
-        private void isChekbox_CheckedChanged(object sender, EventArgs e)
+        private void isStoppingTranslation_CheckedChanged(object sender, EventArgs e)
         {
-            if (isChekbox.Checked)
+            if (isStoppingTranslation.Checked)
             {
                 isTakingScreenshots = false;
                 isPreview = false;
 
                 //<-- of external source -->
-                if (comboBox1.Text == "Of external source image")
+                if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "изображение из внешнего источника")
                 {
-                    textBox1.Visible = true;
-                    button1.Visible = true;
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.Load(textBox1.Text);
-                    imgPreview.Image = pictureBox.Image;
-                    pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                    try
+                    {
+                        ImageWay.Visible = true;
+                        Rooting.Visible = false;
+                        ImageWay.Text = "";
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Load(ImageWay.Text);
+                        imgPreview.Image = pictureBox.Image;
+                        pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                        pictureBox.Image.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(Resource1.MessageNullTextRoot);
+                        isTakingScreenshots = true;
+                        isPreview = true;
+                        isStoppingTranslation.Checked = false;
+                    }
                 }
 
+
                 //< --of local source -->
-                else if (comboBox1.Text == "Local image")
+                else if (ImageChoosing.Text == "Local image" || ImageChoosing.Text == "Изображение из локального источника")
                 {
-                    textBox1.Visible = true;
-                    button1.Visible = true;
-                    Bitmap bitmap = new Bitmap(textBox1.Text);
-                    imgPreview.Image = bitmap;
-                    bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                    try
+                    {
+                        ImageWay.Visible = true;
+                        Rooting.Visible = true;
+                        ImageWay.Text = "";
+                        Bitmap bitmap = new Bitmap(ImageWay.Text);
+                        imgPreview.Image = bitmap;
+                        bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                        bitmap.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(Resource1.MessageNullTextRoot);
+                        isTakingScreenshots = true;
+                        isPreview = true;
+                        isStoppingTranslation.Checked = false;
+                    }
                 }
 
                 //<-- Dinamic image of Text -->
-                else if (comboBox1.Text == "Dynamic image")
+                else if (ImageChoosing.Text == "Dynamic image" || ImageChoosing.Text == "Динамическое изображение")
                 {
 
-                    textBox1.Visible = false;
-                    button1.Visible = false;
+                    ImageWay.Visible = false;
+                    Rooting.Visible = false;
                     Rectangle bounds = Screen.GetBounds(Point.Empty);
                     using (Bitmap bmp = new Bitmap(bounds.Width, bounds.Height))
                     {
@@ -542,11 +589,11 @@ namespace ScreenTask
         {
             if (stopTranslationToolStripMenuItem.Checked)
             {
-                isChekbox.Checked = true;
+                isStoppingTranslation.Checked = true;
             }
             else
             {
-                isChekbox.Checked = false;
+                isStoppingTranslation.Checked = false;
             }
         }
 
@@ -588,43 +635,45 @@ namespace ScreenTask
 
                 var memStream = new MemoryStream();
                 bmp.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                bmp.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
                 return bmp;
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Rooting_Click(object sender, EventArgs e)
         {
             var OFD = new System.Windows.Forms.OpenFileDialog();
             OFD.ShowDialog();
-            textBox1.Text = OFD.FileName;
+            ImageWay.Text = OFD.FileName;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ImageChoosing_SelectedIndexChanged(object sender, EventArgs e)
         {
             //<-- of external source -->
-            if (comboBox1.Text == "Of external source image")
+            if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "изображение из внешнего источника")
             {
-                textBox1.Visible = true;
-                button1.Visible = false;
+                ImageWay.Visible = true;
+                Rooting.Visible = false;
             }
 
             //< --of local source -->
-            else if (comboBox1.Text == "Local image")
+            else if (ImageChoosing.Text == "Local image" || ImageChoosing.Text == "Изображение из локального источника")
             {
-                textBox1.Visible = true;
-                button1.Visible = true;
+                ImageWay.Visible = true;
+                Rooting.Visible = true;
             }
 
             else
             {
-                textBox1.Visible = false;
-                button1.Visible = false;
+                ImageWay.Visible = false;
+                Rooting.Visible = false;
             }
         }
 
-        private void OnceTranslation_CheckedChanged(object sender, EventArgs e)
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Properties.Settings.Default.Language = LanguageChoosing.SelectedValue.ToString();
+            Properties.Settings.Default.Save();
         }
     }
 }
