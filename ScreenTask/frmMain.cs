@@ -493,12 +493,12 @@ namespace ScreenTask
                     {
                         ImageWay.Visible = true;
                         Rooting.Visible = false;
-                        ImageWay.Text = "";
                         PictureBox pictureBox = new PictureBox();
                         pictureBox.Load(ImageWay.Text);
                         imgPreview.Image = pictureBox.Image;
                         pictureBox.Image.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
                         pictureBox.Image.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                        ImageWay.Text = "";
                     }
                     catch
                     {
@@ -517,11 +517,11 @@ namespace ScreenTask
                     {
                         ImageWay.Visible = true;
                         Rooting.Visible = true;
-                        ImageWay.Text = "";
                         Bitmap bitmap = new Bitmap(ImageWay.Text);
                         imgPreview.Image = bitmap;
                         bitmap.Save(Application.StartupPath + "/WebServer" + "/ScreenTask.jpg", ImageFormat.Jpeg);
                         bitmap.Save(Application.StartupPath + "/OtherWebserver" + "/ScreenTask.jpg", ImageFormat.Jpeg);
+                        ImageWay.Text = "";
                     }
                     catch
                     {
