@@ -202,8 +202,11 @@
   <data name="numShotEvery.Location" type="System.Drawing.Point, System.Drawing">
     <value>533, 131</value>
   </data>
-  <data name="isChekbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>671, 266</value>
+  <data name="isStoppingTranslation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 21</value>
+  </data>
+  <data name="isStoppingTranslation.Text" xml:space="preserve">
+    <value>Остановить трансляцию</value>
   </data>
   <data name="Tree.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1347,7 +1350,7 @@
     <value>Только видео</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>843, 464</value>
+    <value>848, 467</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

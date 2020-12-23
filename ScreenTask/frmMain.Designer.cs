@@ -100,24 +100,24 @@
             // 
             // imgPreview
             // 
+            resources.ApplyResources(this.imgPreview, "imgPreview");
             this.imgPreview.Image = global::ScreenTask.Properties.Resources.imgPrev;
             this.imgPreview.InitialImage = global::ScreenTask.Properties.Resources.imgPrev;
-            resources.ApplyResources(this.imgPreview, "imgPreview");
             this.imgPreview.Name = "imgPreview";
             this.imgPreview.TabStop = false;
             this.imgPreview.Click += new System.EventHandler(this.imgPreview_Click);
             // 
             // pnlOptions
             // 
-            this.pnlOptions.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(this.pnlOptions, "pnlOptions");
+            this.pnlOptions.BackColor = System.Drawing.Color.SteelBlue;
             this.pnlOptions.Name = "pnlOptions";
             // 
             // comboIPs
             // 
+            resources.ApplyResources(this.comboIPs, "comboIPs");
             this.comboIPs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIPs.FormattingEnabled = true;
-            resources.ApplyResources(this.comboIPs, "comboIPs");
             this.comboIPs.Name = "comboIPs";
             // 
             // cbCaptureMouse
@@ -138,8 +138,8 @@
             // 
             // btnStopServer
             // 
-            this.btnStopServer.BackColor = System.Drawing.Color.Maroon;
             resources.ApplyResources(this.btnStopServer, "btnStopServer");
+            this.btnStopServer.BackColor = System.Drawing.Color.Maroon;
             this.btnStopServer.ForeColor = System.Drawing.Color.White;
             this.btnStopServer.Name = "btnStopServer";
             this.btnStopServer.UseVisualStyleBackColor = false;
@@ -147,8 +147,8 @@
             // 
             // btnStartServer
             // 
-            this.btnStartServer.BackColor = System.Drawing.Color.Gray;
             resources.ApplyResources(this.btnStartServer, "btnStartServer");
+            this.btnStartServer.BackColor = System.Drawing.Color.Gray;
             this.btnStartServer.ForeColor = System.Drawing.Color.White;
             this.btnStartServer.Name = "btnStartServer";
             this.btnStartServer.Tag = "start";
@@ -247,12 +247,12 @@
             // 
             // numShotEvery
             // 
+            resources.ApplyResources(this.numShotEvery, "numShotEvery");
             this.numShotEvery.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            resources.ApplyResources(this.numShotEvery, "numShotEvery");
             this.numShotEvery.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -280,9 +280,9 @@
             // 
             // lblWebsite
             // 
+            resources.ApplyResources(this.lblWebsite, "lblWebsite");
             this.lblWebsite.BackColor = System.Drawing.Color.Transparent;
             this.lblWebsite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            resources.ApplyResources(this.lblWebsite, "lblWebsite");
             this.lblWebsite.Name = "lblWebsite";
             this.lblWebsite.Click += new System.EventHandler(this.lblWebsite_Click);
             // 
@@ -296,48 +296,48 @@
             // Tree
             // 
             this.Tree.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.Tree.ContextMenuStrip = this.PutUpMenu;
             resources.ApplyResources(this.Tree, "Tree");
+            this.Tree.ContextMenuStrip = this.PutUpMenu;
             this.Tree.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // PutUpMenu
             // 
+            resources.ApplyResources(this.PutUpMenu, "PutUpMenu");
             this.PutUpMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.PutUpMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startServerToolStripMenuItem,
             this.stopServerToolStripMenuItem,
             this.stopTranslationToolStripMenuItem});
             this.PutUpMenu.Name = "PutUpMenu";
-            resources.ApplyResources(this.PutUpMenu, "PutUpMenu");
             // 
             // startServerToolStripMenuItem
             // 
-            this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
             resources.ApplyResources(this.startServerToolStripMenuItem, "startServerToolStripMenuItem");
+            this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
             this.startServerToolStripMenuItem.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
             // stopServerToolStripMenuItem
             // 
-            this.stopServerToolStripMenuItem.Name = "stopServerToolStripMenuItem";
             resources.ApplyResources(this.stopServerToolStripMenuItem, "stopServerToolStripMenuItem");
+            this.stopServerToolStripMenuItem.Name = "stopServerToolStripMenuItem";
             this.stopServerToolStripMenuItem.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
             // stopTranslationToolStripMenuItem
             // 
+            resources.ApplyResources(this.stopTranslationToolStripMenuItem, "stopTranslationToolStripMenuItem");
             this.stopTranslationToolStripMenuItem.CheckOnClick = true;
             this.stopTranslationToolStripMenuItem.DoubleClickEnabled = true;
             this.stopTranslationToolStripMenuItem.Name = "stopTranslationToolStripMenuItem";
-            resources.ApplyResources(this.stopTranslationToolStripMenuItem, "stopTranslationToolStripMenuItem");
             this.stopTranslationToolStripMenuItem.Click += new System.EventHandler(this.stopTranslationToolStripMenuItem_Click);
             // 
             // ImageChoosing
             // 
+            resources.ApplyResources(this.ImageChoosing, "ImageChoosing");
             this.ImageChoosing.FormattingEnabled = true;
             this.ImageChoosing.Items.AddRange(new object[] {
             resources.GetString("ImageChoosing.Items"),
             resources.GetString("ImageChoosing.Items1"),
             resources.GetString("ImageChoosing.Items2")});
-            resources.ApplyResources(this.ImageChoosing, "ImageChoosing");
             this.ImageChoosing.Name = "ImageChoosing";
             this.ImageChoosing.SelectedIndexChanged += new System.EventHandler(this.ImageChoosing_SelectedIndexChanged);
             // 
@@ -362,8 +362,8 @@
             // 
             // LanguageChoosing
             // 
-            this.LanguageChoosing.FormattingEnabled = true;
             resources.ApplyResources(this.LanguageChoosing, "LanguageChoosing");
+            this.LanguageChoosing.FormattingEnabled = true;
             this.LanguageChoosing.Name = "LanguageChoosing";
             // 
             // frmMain

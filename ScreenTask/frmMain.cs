@@ -650,7 +650,7 @@ namespace ScreenTask
         private void ImageChoosing_SelectedIndexChanged(object sender, EventArgs e)
         {
             //<-- of external source -->
-            if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "изображение из внешнего источника")
+            if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "Изображение из внешнего источника")
             {
                 ImageWay.Visible = true;
                 Rooting.Visible = false;
