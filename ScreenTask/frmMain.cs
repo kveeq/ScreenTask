@@ -487,7 +487,7 @@ namespace ScreenTask
                 isPreview = false;
 
                 //<-- of external source -->
-                if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "изображение из внешнего источника")
+                if (ImageChoosing.Text == "Of  external  source image" || ImageChoosing.Text == "Изображение из внешнего источника")
                 {
                     try
                     {
@@ -511,7 +511,7 @@ namespace ScreenTask
 
 
                 //< --of local source -->
-                else if (ImageChoosing.Text == "Local image" || ImageChoosing.Text == "Изображение из локального источника")
+                else if (ImageChoosing.Text == "Local  image" || ImageChoosing.Text == "Локальное изображение")
                 {
                     try
                     {
@@ -533,7 +533,7 @@ namespace ScreenTask
                 }
 
                 //<-- Dinamic image of Text -->
-                else if (ImageChoosing.Text == "Dynamic image" || ImageChoosing.Text == "Динамическое изображение")
+                else if (ImageChoosing.Text == "Dynamic  image" || ImageChoosing.Text == "Динамическое изображение")
                 {
 
                     ImageWay.Visible = false;
@@ -650,14 +650,14 @@ namespace ScreenTask
         private void ImageChoosing_SelectedIndexChanged(object sender, EventArgs e)
         {
             //<-- of external source -->
-            if (ImageChoosing.Text == "Of external source image" || ImageChoosing.Text == "Изображение из внешнего источника")
+            if (ImageChoosing.Text == "Of  external  source image" || ImageChoosing.Text == "Изображение из внешнего источника")
             {
                 ImageWay.Visible = true;
                 Rooting.Visible = false;
             }
 
             //< --of local source -->
-            else if (ImageChoosing.Text == "Local image" || ImageChoosing.Text == "Изображение из локального источника")
+            else if (ImageChoosing.Text == "Local  image" || ImageChoosing.Text == "Локальное изображение")
             {
                 ImageWay.Visible = true;
                 Rooting.Visible = true;

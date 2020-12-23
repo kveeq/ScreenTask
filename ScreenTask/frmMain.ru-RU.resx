@@ -118,95 +118,213 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gbOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 14</value>
+  </data>
+  <data name="gbOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 112</value>
+  </data>
+  <data name="gbLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 337</value>
+  </data>
+  <data name="gbLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 120</value>
+  </data>
+  <data name="gbPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 142</value>
+  </data>
+  <data name="gbPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 189</value>
+  </data>
+  <data name="txtLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 236</value>
+  </data>
+  <data name="txtLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 139</value>
+  </data>
+  <data name="imgPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 236</value>
+  </data>
+  <data name="imgPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 140</value>
+  </data>
+  <data name="pnlOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>878, 28</value>
+  </data>
+  <data name="pnlOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 56</value>
+  </data>
+  <data name="comboIPs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 87</value>
+  </data>
+  <data name="comboIPs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 21</value>
+  </data>
   <data name="cbCaptureMouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 131</value>
+    <value>292, 106</value>
   </data>
   <data name="cbCaptureMouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
+    <value>105, 17</value>
   </data>
   <data name="cbCaptureMouse.Text" xml:space="preserve">
     <value>Захват курсора</value>
   </data>
   <data name="cbPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 266</value>
+    <value>390, 216</value>
   </data>
   <data name="cbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 21</value>
+    <value>101, 17</value>
   </data>
   <data name="cbPreview.Text" xml:space="preserve">
     <value>Предпросмотр</value>
+  </data>
+  <data name="btnStopServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 196</value>
+  </data>
+  <data name="btnStopServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 23</value>
+  </data>
+  <data name="btnStartServer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 192</value>
+  </data>
+  <data name="btnStartServer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 30</value>
   </data>
   <data name="btnStartServer.Text" xml:space="preserve">
     <value>Запуск сервера</value>
   </data>
   <data name="txtPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>482, 201</value>
+    <value>362, 163</value>
+  </data>
+  <data name="txtPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
   </data>
   <data name="txtUser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 199</value>
+    <value>236, 162</value>
+  </data>
+  <data name="txtUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 204</value>
+    <value>314, 166</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
+    <value>54, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Пароль : </value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 199</value>
+    <value>150, 162</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 17</value>
+    <value>89, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Пользователь : </value>
   </data>
   <data name="cbPrivate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 198</value>
+    <value>6, 161</value>
   </data>
   <data name="cbPrivate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
+    <value>143, 17</value>
   </data>
   <data name="cbPrivate.Text" xml:space="preserve">
     <value>Приватная трансляция</value>
   </data>
+  <data name="numPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 88</value>
+  </data>
+  <data name="numPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 90</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 17</value>
+    <value>35, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Порт:</value>
   </data>
   <data name="txtURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 156</value>
+    <value>47, 127</value>
+  </data>
+  <data name="txtURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>338, 20</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 159</value>
+    <value>4, 129</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 88</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="cbScreenshotEvery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 86</value>
   </data>
   <data name="cbScreenshotEvery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 21</value>
+    <value>162, 17</value>
   </data>
   <data name="cbScreenshotEvery.Text" xml:space="preserve">
     <value>Делать скриншот каждые:</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>642, 132</value>
+    <value>482, 107</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
+    <value>75, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Миллисекунд</value>
   </data>
   <data name="numShotEvery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 131</value>
+    <value>400, 106</value>
+  </data>
+  <data name="numShotEvery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="lblMe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 391</value>
+  </data>
+  <data name="lblMe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 13</value>
+  </data>
+  <data name="lblWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 384</value>
+  </data>
+  <data name="lblWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 24</value>
+  </data>
+  <data name="isStoppingTranslation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>489, 216</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="isStoppingTranslation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="isStoppingTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 21</value>
+    <value>150, 17</value>
   </data>
   <data name="isStoppingTranslation.Text" xml:space="preserve">
     <value>Остановить трансляцию</value>
+  </data>
+  <data name="startServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="stopServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="stopTranslationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="PutUpMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 70</value>
   </data>
   <data name="Tree.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1340,17 +1458,71 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="ImageChoosing.Items" xml:space="preserve">
+    <value>Динамическое изображение</value>
+  </data>
+  <data name="ImageChoosing.Items1" xml:space="preserve">
+    <value>Локальное изображение</value>
+  </data>
+  <data name="ImageChoosing.Items2" xml:space="preserve">
+    <value>Изображение из внешнего источника</value>
+  </data>
+  <data name="ImageChoosing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>463, 192</value>
+  </data>
+  <data name="ImageChoosing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ImageChoosing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 21</value>
+  </data>
+  <data name="ImageChoosing.Text" xml:space="preserve">
+    <value>Выберите изображение при остановке</value>
+  </data>
+  <data name="ImageWay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>362, 192</value>
+  </data>
+  <data name="ImageWay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ImageWay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 20</value>
+  </data>
+  <data name="Rooting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>435, 192</value>
+  </data>
+  <data name="Rooting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="Rooting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
   <data name="OnceTranslation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 200</value>
+    <value>464, 162</value>
+  </data>
+  <data name="OnceTranslation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="OnceTranslation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
+    <value>96, 17</value>
   </data>
   <data name="OnceTranslation.Text" xml:space="preserve">
     <value>Только видео</value>
   </data>
+  <data name="LanguageChoosing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 11</value>
+  </data>
+  <data name="LanguageChoosing.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="LanguageChoosing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 21</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>848, 467</value>
+    <value>636, 417</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
